@@ -24,7 +24,7 @@ pipeline {
             steps {
                 echo " ============== start building image =================="
                 dir ('docker/toolbox') {
-                	sh 'docker build -t macasem/toolbox:latest . '
+                	sh 'docker build --network host -t macasem/toolbox:latest . '
                 }
             }
         }
