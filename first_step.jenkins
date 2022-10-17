@@ -21,6 +21,11 @@ pipeline {
                 sh 'ssh asem@debian \'uptime\''
             }
         }
+        stage("Third step") {
+            steps {
+                sh 'ssh asem@debian \'cat /etc/os-release\''
+            }
+        }
     }
 }
 
