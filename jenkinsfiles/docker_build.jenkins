@@ -16,6 +16,7 @@ pipeline {
             steps {
                 echo " ============== docker login =================="
                 withCredentials([usernamePassword(credentialsId: 'ed1379ef-6d36-442a-bdeb-48561dde7c7e', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    echo "Current local workspace: {$context.WORKSPACE}"
                     sh "echo $PASSWORD \\| docker login -u $USERNAME --password-stdin"
                 }
             }
